@@ -18,7 +18,7 @@ public class Capabilities {
 		this.capacidade.setCapability("deviceName", "Android");
 		this.capacidade.setCapability("automationName", "uiautomator2");
 		this.capacidade.setCapability("appPackage", "com.android.calculator2");
-		this.capacidade.setCapability("appActivity", "com.android.calculator2");
+		this.capacidade.setCapability("appActivity", "com.android.calculator2.Calculator");
 		}
 	public DesiredCapabilities getCapabilities() {
 		return this.capacidade;
