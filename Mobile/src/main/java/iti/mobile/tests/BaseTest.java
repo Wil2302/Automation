@@ -22,12 +22,8 @@ public class BaseTest {
 		URL remoteUrl = new URL ("http://localhost:4723/wd/hub");
 		Capabilities mobileCapabilitie = new Capabilities();
 		driver = new AndroidDriver<MobileElement>(remoteUrl, mobileCapabilitie.getCapabilities());
+		baseApp = new App(driver);
 	}
-	
-	public void inicializaClasses() {
-	 baseApp = new App(driver);
-	}
-	
 	
 	@After
 	public void fecharApp() {

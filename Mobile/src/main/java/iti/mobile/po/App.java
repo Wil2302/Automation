@@ -6,34 +6,32 @@ import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class App {
-	
-	protected AppiumDriver<MobileElement> driver;
-	
-	// Id ou Xpath para interagir com botôes
-	
-	@AndroidBy( id = "	//android.widget.Button[@content-desc=\"divide\"]")
-	public MobileElement btnDividir;
-	
-	@AndroidBy( id = "//android.widget.Button[@content-desc=\"multiply\"]")
-	public MobileElement btnMultiplicar;
-	
-	@AndroidBy( id = "//android.widget.Button[@content-desc='minus']")
-	public MobileElement btnSubtrair;
-	
-	@AndroidBy( xpath = "//android.widget.Button[@content-desc='plus']")
-	public MobileElement btnSomar;
-	
-	@AndroidBy( xpath = "//android.widget.Button[@content-desc='equals']")
-	public MobileElement btnIgual;
-	
-	@AndroidBy( id = "com.android.calculator2:id/result")
-	public MobileElement lblResult;
+	public AppiumDriver<MobileElement> driver;
 	
 	public App(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 	}
-
+	
+	/*Metodos que recebem como parametro o valor do botão desejado 
+	 * Ex: clicarNumero recebe String "Numero desejado" ou "6"
+	 * Ex: clicarOperador recebe o nome dos operadores como descrito abaixo:
+	 * + = plus
+	 * - = minus
+	 * * = multiply
+	 * / = divide 
+	 * DEL = delete
+	 * = == equals
+	 */
 	public void clicarNumeros(String num) {
 		driver.findElementByXPath("//android.widget.Button[contains(@text,'"+num+"')]").click();
+	}
+	
+	public void clicarOperador(String operador) {
+		driver.findElementByXPath("//android.widget.Button[@content-desc='"+operador+"']").click();
+	}
+	
+	public String pegarResultado() {
+		String text = driver.findElementById("com.android.calculator2:id/result").getText();
+		return text;
 	}
 }
