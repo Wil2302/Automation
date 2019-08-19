@@ -1,4 +1,4 @@
-package iti.mobile.tests;
+package iti.mobile.calc;
 
 import org.junit.Assert;
 import org.junit.Test;

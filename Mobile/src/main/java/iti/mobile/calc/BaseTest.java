@@ -1,4 +1,4 @@
-package iti.mobile.tests;
+package iti.mobile.calc;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -9,8 +9,6 @@ import org.junit.Test;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import iti.mobile.po.App;
-import iti.mobile.utils.Capabilities;
 
 public class BaseTest {
 	

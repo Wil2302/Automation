@@ -1,4 +1,4 @@
-package iti.mobile.po;
+package iti.mobile.calc;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

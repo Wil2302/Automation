@@ -1,4 +1,4 @@
-package iti.mobile.utils;
+package iti.mobile.calc;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
