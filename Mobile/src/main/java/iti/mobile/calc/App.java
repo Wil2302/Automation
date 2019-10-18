@@ -1,16 +1,21 @@
 package iti.mobile.calc;
 
+import org.openqa.selenium.support.PageFactory;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class App {
 	public AppiumDriver<MobileElement> driver;
 	
 	public App(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
+	
 	
 	/*Metodos que recebem como parametro o valor do botão desejado 
 	 * Ex: clicarNumero recebe String "Numero desejado" ou "6"
@@ -22,6 +27,7 @@ public class App {
 	 * DEL = delete
 	 * = == equals
 	 */
+	
 	public void clicarNumeros(String num) {
 		driver.findElementByXPath("//android.widget.Button[contains(@text,'"+num+"')]").click();
 	}
