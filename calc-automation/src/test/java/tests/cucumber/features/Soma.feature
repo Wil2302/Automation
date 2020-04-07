@@ -1,5 +1,5 @@
 # language: pt
-Funcionalidade: Onboarding PF
+Funcionalidade: CT01
 
   @INTEIROS
   Cenario: Somar dois numeros inteiros e validar o resultado
